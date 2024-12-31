@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    /* Same styles as the forum pages */
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
+
+    body {
+      font-family: 'Source Code Pro', monospace;
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(#222922, #000500);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .header {
+      background: #111;
+      color: #6f6;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 2.5em;
+      text-shadow: 0 0 10px rgba(50, 255, 50, 0.5), 0 0 5px rgba(100, 255, 100, 0.5);
+      box-shadow: 0 0 20px rgba(50, 255, 50, 0.5);
+    }
+
+    .dashboard-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .user-list {
+      width: 80%;
+      max-width: 1000px;
+      margin: 20px 0;
+      padding: 20px;
+      background: #222;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(50, 255, 50, 0.3);
+    }
+
+    .user-list table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #fff;
+    }
+
+    .user-list th, .user-list td {
+      padding: 10px;
+      text-align: left;
+      border-bottom: 1px solid #444;
+    }
+
+    .user-list th {
+      background-color: #333;
+    }
+
+    .user-list tr:hover {
+      background-color: #444;
+    }
+
+    .user-list button {
+      background-color: #6f6;
+      color: #000;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .user-list button:hover {
+      background-color: #fff;
+      color: #6f6;
+    }
+
+    .footer {
+      text-align: center;
+      background: #111;
+      color: #6f6;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer a {
+      color: #6f6;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-shadow: 0 0 5px #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    Admin Dashboard
+  </div>
+
+  <!-- Admin Dashboard Content -->
+  <div class="dashboard-container">
+    <div class="user-list">
+      <h3>Manage Users</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>User1</td>
+            <td>user1@example.com</td>
+            <td>Active</td>
+            <td><button>Deactivate</button></td>
+          </tr>
+          <tr>
+            <td>User2</td>
+            <td>user2@example.com</td>
+            <td>Inactive</td>
+            <td><button>Activate</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Powered by <a href="https://mybb.com" target="_blank">MyBB</a>
+  </div>
+
+</body>
+</html>
