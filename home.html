@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum Index</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400&display=swap');
+
+    /* General Styles */
+    body {
+      font-family: 'Source Code Pro', monospace;
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(#222922, #000500);
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Header */
+    .header {
+      background: #111;
+      color: #6f6;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 2.5em;
+      text-shadow: 0 0 10px rgba(50, 255, 50, 0.5), 0 0 5px rgba(100, 255, 100, 0.5);
+      box-shadow: 0 0 20px rgba(50, 255, 50, 0.5);
+    }
+
+    /* Forum Navigation */
+    .nav {
+      text-align: center;
+      background: #222;
+      padding: 10px;
+      font-size: 1.2em;
+      border-bottom: 2px solid #444;
+    }
+
+    .nav a {
+      color: #6f6;
+      text-decoration: none;
+      padding: 0 15px;
+    }
+
+    .nav a:hover {
+      text-shadow: 0 0 5px #fff;
+    }
+
+    /* Categories Grid */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .category {
+      background: #111;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(50, 255, 50, 0.2);
+      text-align: left;
+      transition: all 0.3s ease;
+    }
+
+    .category:hover {
+      background: #6f6;
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(50, 255, 50, 0.8);
+    }
+
+    .category h3 {
+      margin: 0;
+      font-size: 1.5em;
+      text-transform: uppercase;
+    }
+
+    .category p {
+      font-size: 1em;
+      color: #bbb;
+    }
+
+    .category a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Forum Footer */
+    .footer {
+      text-align: center;
+      background: #111;
+      color: #6f6;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer a {
+      color: #6f6;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-shadow: 0 0 5px #fff;
+    }
+
+    /* Button */
+    .enter-button {
+      padding: 15px 30px;
+      background-color: #6f6;
+      color: #000;
+      font-size: 1.5em;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(50, 255, 50, 0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 50px;
+    }
+
+    .enter-button:hover {
+      background-color: #fff;
+      color: #6f6;
+      box-shadow: 0 0 20px rgba(50, 255, 50, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">
+    HackForums Clone
+  </div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <a href="#">Home</a>
+    <a href="#">Forum</a>
+    <a href="#">Members</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <!-- Forum Categories -->
+  <div class="container">
+    <div class="category">
+      <h3><a href="#">General Discussion</a></h3>
+      <p>Talk about anything and everything here.</p>
+    </div>
+    <div class="category">
+      <h3><a href="#">News & Announcements</a></h3>
+      <p>Stay updated with the latest news.</p>
+    </div>
+    <div class="category">
+      <h3><a href="#">Tech Support</a></h3>
+      <p>Need help? Ask here for tech support.</p>
+    </div>
+    <div class="category">
+      <h3><a href="#">Off-Topic</a></h3>
+      <p>Non-forum discussions, for relaxed chat.</p>
+    </div>
+    <div class="category">
+      <h3><a href="#">Market</a></h3>
+      <p>Buy, sell, and trade items and services.</p>
+    </div>
+    <div class="category">
+      <h3><a href="#">Security</a></h3>
+      <p>Discuss security, hacking, and more.</p>
+    </div>
+  </div>
+
+  <!-- Enter Button -->
+  <div style="text-align: center;">
+    <button class="enter-button" onclick="enterSite()">Click to Enter</button>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    Powered by <a href="https://mybb.com" target="_blank">MyBB</a>
+  </div>
+
+  <script>
+    function enterSite() {
+      const button = document.querySelector('.enter-button');
+      button.textContent = "LOADING...";
+      button.disabled = true;
+      
+      setTimeout(() => {
+        button.textContent = "ERROR...";
+      }, 200);
+      setTimeout(() => {
+        button.textContent = "LOADING...";
+      }, 400);
+      setTimeout(() => {
+        button.textContent = "SUCCESS!";
+      }, 600);
+
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 1000);
+    }
+  </script>
+  
+</body>
+</html>
