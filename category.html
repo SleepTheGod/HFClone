@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category - General Discussion</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Source Code Pro', monospace;
+      background: radial-gradient(#222922, #000500);
+      color: #fff;
+      padding: 20px;
+    }
+    /* Header, Nav and Footer Styles */
+    .header, .footer, .nav { /* same styles as before */ }
+    /* Threads List */
+    .threads {
+      margin-top: 20px;
+    }
+    .thread {
+      background: #111;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px rgba(50, 255, 50, 0.2);
+      transition: all 0.3s ease;
+    }
+    .thread:hover {
+      background: #6f6;
+      color: #000;
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(50, 255, 50, 0.8);
+    }
+    .thread h3 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+    .thread p {
+      color: #bbb;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">HackForums Clone - General Discussion</div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="forum.html">Forum</a>
+    <a href="members.html">Members</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Threads -->
+  <div class="threads">
+    <div class="thread">
+      <h3><a href="#">Welcome to the General Discussion</a></h3>
+      <p>This is where you can talk about anything and everything!</p>
+    </div>
+    <div class="thread">
+      <h3><a href="#">Tech Innovations in 2024</a></h3>
+      <p>Discuss the latest tech developments here!</p>
+    </div>
+    <!-- More threads... -->
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">Powered by <a href="https://mybb.com" target="_blank">MyBB</a></div>
+
+</body>
+</html>
