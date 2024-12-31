@@ -1,23 +1,23 @@
-// Use the desired database, e.g., 'hackforums'
+// Connect to MongoDB and switch to 'hackforums' database
 use hackforums;
 
-// Create 'users' collection with advanced security fields
+// Create 'users' collection
 db.createCollection('users');
 
-// Insert sample data into 'users' collection with secure password and role handling
+// Insert users with secure bcrypt-hashed passwords
 db.users.insertMany([
   {
     username: "user1",
     email: "user1@example.com",
     password: "$2b$12$XzRlP.I3X6INLkgSHL44s.FlaXJX1Ejkc5HzlDAgxMzMNZcnVf4jm", // bcrypt-hashed password
-    role: "user", // 'user' or 'admin'
-    status: "active", // 'active' or 'inactive'
+    role: "user",
+    status: "active",
     last_login: new Date(),
     created_at: new Date(),
     updated_at: new Date(),
     failed_login_attempts: 0,
-    lockout_until: null, // Lockout until date if there are too many failed attempts
-    reset_token: null, // Store a token for password reset flow if needed
+    lockout_until: null,
+    reset_token: null,
     reset_token_expiry: null
   },
   {
@@ -36,7 +36,7 @@ db.users.insertMany([
   }
 ]);
 
-// Create 'admin_actions' collection to log admin actions
+// Create 'admin_actions' collection
 db.createCollection('admin_actions');
 
 // Insert sample admin actions
@@ -57,10 +57,10 @@ db.admin_actions.insertMany([
   }
 ]);
 
-// Create 'sessions' collection to manage secure user sessions
+// Create 'sessions' collection
 db.createCollection('sessions');
 
-// Insert sample session data (JWTs or session tokens can be used)
+// Insert sample session data
 db.sessions.insertOne({
   session_id: "abc123xyz",
   username: "user1",
@@ -70,10 +70,10 @@ db.sessions.insertOne({
   user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36"
 });
 
-// Add collections for tracking failed login attempts and user lockouts
+// Create 'failed_login_attempts' collection
 db.createCollection('failed_login_attempts');
 
-// Store failed login attempts to prevent brute force
+// Insert sample failed login attempts
 db.failed_login_attempts.insertMany([
   {
     username: "user1",
@@ -82,3 +82,16 @@ db.failed_login_attempts.insertMany([
     timestamp: new Date()
   }
 ]);
+
+// Logging and monitoring functions
+function logAction(action, details) {
+  const log = {
+    action,
+    details,
+    timestamp: new Date()
+  };
+  db.logs.insertOne(log);
+}
+
+// Example: Log a failed login attempt
+logAction("Failed Login", { username: "user1", ip_address: "192.168.1.1" });
