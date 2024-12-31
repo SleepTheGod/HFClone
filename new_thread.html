@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create New Thread</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Source Code Pro', monospace;
+      background: radial-gradient(#222922, #000500);
+      color: #fff;
+      padding: 20px;
+    }
+    /* Header, Nav and Footer Styles */
+    .header, .footer, .nav { /* same styles as before */ }
+    /* New Thread Form */
+    .new-thread {
+      max-width: 600px;
+      margin: 0 auto;
+      background: #111;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(50, 255, 50, 0.2);
+    }
+    .new-thread input, .new-thread textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background: #333;
+      border: 1px solid #444;
+      color: #fff;
+    }
+    .new-thread button {
+      padding: 15px 30px;
+      background-color: #6f6;
+      color: #000;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(50, 255, 50, 0.5);
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .new-thread button:hover {
+      background-color: #fff;
+      color: #6f6;
+      box-shadow: 0 0 20px rgba(50, 255, 50, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div class="header">HackForums Clone - Create New Thread</div>
+
+  <!-- Navigation -->
+  <div class="nav">
+    <a href="index.html">Home</a>
+    <a href="forum.html">Forum</a>
+    <a href="members.html">Members</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- New Thread Form -->
+  <div class="new-thread">
+    <h3>Create a New Thread</h3>
+    <input type="text" placeholder="Thread Title" required>
+    <textarea placeholder="Your Message" rows="10" required></textarea>
+    <button type="submit">Submit</button>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">Powered by <a href="https://mybb.com" target="_blank">MyBB</a></div>
+
+</body>
+</html>
